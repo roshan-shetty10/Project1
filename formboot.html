@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test10</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+</head>
+<body>
+	<form action="insert.php" method="POST">
+		<label>enter username<input type="text" name="name" id="name" ></label><br>
+		<label>enter email<input type="email" name="email" id="email"></label><br>
+		<label>enter password<input type="password" name="password" id="password" max="5" maxlength="5"></label><br>
+		<button type="button" id="btn">submit</button> <br>
+	</form>
+
+	<script type="text/javascript">
+$(function(){
+	alert('ghjui')
+	$('#btn').click(function(){
+		alert('gi')
+		var a=document.getElementById('name').value;
+		var b=document.getElementById('email').value;
+		var c=document.getElementById('password').value;
+		$.ajax({
+			url:'insert.php',
+			type:'POST',
+			data:{
+				"name":a,
+				"email":b,
+				"password":c
+
+			},
+			success:function(response){
+				alert('skdbh')
+			},
+			error:function(response){
+				alert('error')
+			}
+		})
+	})
+	})
+</script>
+</body>
+</html>
